@@ -1,4 +1,6 @@
 ---
+import Knap from "./Knap.astro";
+
 const { title, text, image } = Astro.props;
 ---
 
@@ -7,7 +9,9 @@ const { title, text, image } = Astro.props;
     <div class="indhold">
       <h3>{title}</h3>
       <p>{text}</p>
+      <Knap text="Køb billet" href="https://billetto.dk/users/karens-minde-kulturhus?rr=aHR0cHM6Ly9rbWt1bHR1cmh1cy5kay8%3D" />
     </div>
+
     <div class="spisningsbillede">
       <img src={image} alt="Fællesspisning" />
     </div>
@@ -17,41 +21,48 @@ const { title, text, image } = Astro.props;
 <style>
   .baggrund {
     background-color: #f3e2d6;
-    padding: 80px;
+    padding: 80px 25px;
     margin: 20px;
   }
 
   .boks {
     display: grid;
-    gap: 30px;
+    gap: 50px;
     max-width: 1100px;
     margin: 0 auto;
   }
 
-  .indhold {
-    max-width: 60ch;
-  }
-
   .indhold h3 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin-bottom: 1rem;
     color: #533725;
   }
 
   .indhold p {
-    line-height: 1.8;
+    line-height: 1.7;
     color: #533725;
+    margin-bottom: 2rem;
+    max-width: 65ch;
   }
 
   .spisningsbillede img {
     width: 100%;
-    max-width: 350px;
+    max-width: 300px;
     height: auto;
   }
 
   @media screen and (min-width: 800px) {
     .boks {
       grid-template-columns: 1fr 1fr;
+    }
+    .spisningsbillede img {
+      max-width: 380px;
+    }
+    .boks {
+      gap: 15px;
+    }
+    .indhold p {
+      max-width: 59ch;
     }
   }
 </style>
