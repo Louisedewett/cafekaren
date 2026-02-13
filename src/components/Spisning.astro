@@ -1,0 +1,57 @@
+---
+const { title, text, image } = Astro.props;
+---
+
+<section class="baggrund">
+  <div class="boks">
+    <div class="indhold">
+      <h3>{title}</h3>
+      <p>{text}</p>
+    </div>
+    <div class="spisningsbillede">
+      <img src={image} alt="Fællesspisning" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .baggrund {
+    background-color: #f3e2d6;
+    padding: 80px;
+    margin: 20px;
+  }
+
+  .boks {
+    display: grid;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .indhold {
+    max-width: 60ch;
+  }
+
+  .indhold h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #533725;
+  }
+
+  .indhold p {
+    line-height: 1.8;
+    color: #533725;
+  }
+
+  .spisningsbillede img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+  }
+
+  @media screen and (min-width: 800px) {
+    .boks {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>
