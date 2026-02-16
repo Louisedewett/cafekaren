@@ -9,3 +9,11 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+.image_row {
+  display: flex;
+  width: 100%;
+}
+.image_row img {
+  flex: 1; /* each image takes equal width */
+}
