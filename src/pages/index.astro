@@ -1,6 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Spisning from "../components/Spisning.astro";
+import Services from "../components/Services.astro";
 ---
 
 <MainLayout>
@@ -8,4 +9,8 @@ import Spisning from "../components/Spisning.astro";
 
 Prisen er 105 kr. for voksne og 50 kr. for børn (over 12 år). Husk at køb din billet til fællesspisning, som du kan booke via. vores bookingsystem nedenunder.
 " image="/images/spisningsbillede.webp" />
+
+  <div class="tider">
+    <Services text="Vores åbningstider" items={["Mandag: Lukket, men mulighed for kaffe og the fra 12-16", "Tirsdag: 12-17", "Onsdag: 12-20 fra kl. 17 af er der vegetarisk gryderet", "Torsdag: 12-20 fra kl. 18 er der fællesspisning", "Fredag: 12-16"]} />
+  </div>
 </MainLayout>
