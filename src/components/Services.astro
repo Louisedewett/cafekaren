@@ -1,0 +1,54 @@
+---
+/*Når du genbruger SKAL du give disse "props" --> en text og HUSK!!!! at bruge [] brackets fordi det er en ARRAY*/
+interface Props {
+  text: string;
+  items: string[];
+}
+
+const { text, items = [] }: Props = Astro.props; /* har brugt en "array" som er []*/
+---
+
+<div class="card">
+  <h2>{text}</h2>
+  <ul>
+    {items.map((item) => <li>{item}</li>)}
+  </ul>
+</div>
+
+<style>
+  .card {
+    border: 2px solid #ac7470;
+    padding: 1.5rem;
+    max-width: 500px;
+    margin: 2rem auto; /* center */
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #533725;
+  }
+
+  ul {
+    list-style: none;
+    max-width: 60ch;
+    margin: 0 auto;
+    padding-left: 0;
+  }
+
+  ul li {
+    margin-bottom: 2rem;
+    position: relative;
+    padding-left: 1.2rem;
+    color: #462811;
+  }
+
+  ul li::before {
+    content: "-";
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    color: #462811;
+  }
+</style>

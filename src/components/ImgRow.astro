@@ -1,0 +1,30 @@
+---
+const { image, alt } = Astro.props;
+---
+
+<div class="square">
+  <img src={image} alt={alt} />
+</div>
+
+<style>
+  .square {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* square*/
+    overflow: hidden;
+  }
+
+  .square img {
+    width: 600px;
+    height: 600px;
+    object-fit: cover; /* fylder hele firkanten*/
+    display: block;
+  }
+
+  /* Mobile styles */
+  @media (max-width: 767px) {
+    .square img {
+      width: 150px;
+      height: 150px;
+    }
+  }
+</style>
