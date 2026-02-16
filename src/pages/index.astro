@@ -2,10 +2,18 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import Spisning from "../components/Spisning.astro";
 import Services from "../components/Services.astro";
+import ImgRow from "../components/ImgRow.astro";
 ---
 
 <MainLayout>
-  <Spisning title="Fællesspisning" text="Hver torsdag spiser og hygger vi sammen. Den skønne mad bliver serveret fra klokken 18 af vores søde personale. 
+  <div class="open">
+    <Services text="Se hvad vi serverer" items={["Hver dag fra 12-15 er der åbent sandwich på ristet rugbrød med lækkert fyld, hjemmebagte boller og diverse kager og lækkerier. Dog undtagen mandag", "Mandag fra 12-16 er der kun åbent for selvbetjent kaffe og the.", "Hver onsdag fra 17 kan man få dagens vegetariske gryderet.", "Hver torsdag klokken 18 inviterer vi til fællesspisning.", "Vi serverer altid diverse lækre kaffer efter smag og behag og andre drikkevarer, hjemmelavede lemonader, øl, vin og meget mere. "]} />
+    <div class="image_row">
+      <ImgRow image="/imgs/IMG_4097.JPG" alt="img1" />
+      <ImgRow image="/imgs/IMG_4326.jpg" alt="img2" />
+      <ImgRow image="/imgs/IMG_4360.JPG" alt="img3" />
+    </div>
+    <Spisning title="Fællesspisning" text="Hver torsdag spiser og hygger vi sammen. Den skønne mad bliver serveret fra klokken 18 af vores søde personale. 
 
 Prisen er 105 kr. for voksne og 50 kr. for børn (over 12 år). Husk at køb din billet til fællesspisning, som du kan booke via. vores bookingsystem nedenunder.
 " image="/images/spisningsbillede.webp" />
