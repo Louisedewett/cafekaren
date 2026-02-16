@@ -1,5 +1,15 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import Services from "../components/Services.astro";
+import ImgRow from "../components/ImgRow.astro";
 ---
 
 <MainLayout />
+<div class="open">
+  <Services text="Se hvad vi serverer" items={["Hver dag fra 12-15 er der åbent sandwich på ristet rugbrød med lækkert fyld, hjemmebagte boller og diverse kager og lækkerier. Dog undtagen mandag", "Mandag fra 12-16 er der kun åbent for selvbetjent kaffe og the.", "Hver onsdag fra 17 kan man få dagens vegetariske gryderet.", "Hver torsdag klokken 18 inviterer vi til fællesspisning.", "Vi serverer altid diverse lækre kaffer efter smag og behag og andre drikkevarer, hjemmelavede lemonader, øl, vin og meget mere. "]} />
+  <div class="image_row">
+    <ImgRow image="/imgs/IMG_4097.JPG" alt="img1" />
+    <ImgRow image="/imgs/IMG_4326.jpg" alt="img2" />
+    <ImgRow image="/imgs/IMG_4360.JPG" alt="img3" />
+  </div>
+</div>
