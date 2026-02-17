@@ -1,0 +1,23 @@
+/* Light */
+@font-face {
+  font-family: "proto_light";
+  src: url("/fonts/protogrotesk-light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Regular */
+@font-face {
+  font-family: "proto_regular";
+  src: url("/fonts/protogrotesk-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Bold */
+@font-face {
+  font-family: "proto_bold";
+  src: url("/fonts/protogrotesk-bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
