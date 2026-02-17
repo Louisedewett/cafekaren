@@ -1,5 +1,6 @@
 ---
 /*Når du genbruger SKAL du give disse "props" --> en text og HUSK!!!! at bruge [] brackets fordi det er en ARRAY*/
+import Knap from "./Knap.astro";
 interface Props {
   text: string;
   items: string[];
@@ -17,14 +18,17 @@ const { text, items = [], bgColor = "#AC7470", shadowColor = "#69434F", headingC
   <ul>
     {items.map((item) => <li>{item}</li>)}
   </ul>
+  <div class="right">
+    <Knap text="Se Menuen" />
+  </div>
 </div>
 
 <style>
   .card {
     background-color: var(--bg);
     box-shadow: 10px 10px 0px var(--shadow);
-    padding: 1.5rem;
-    max-width: 500px;
+    padding: 2rem;
+    max-width: 700px;
     margin: 2rem auto; /* center */
   }
 
@@ -57,5 +61,10 @@ const { text, items = [], bgColor = "#AC7470", shadowColor = "#69434F", headingC
     left: 0;
     font-weight: bold;
     color: var(--text);
+  }
+
+  .right {
+    display: flex;
+    justify-content: flex-end;
   }
 </style>
