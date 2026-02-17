@@ -3,12 +3,16 @@
 interface Props {
   text: string;
   items: string[];
+  bgColor: string;
+  shadowColor: string;
+  headingColor: string;
+  textColor: string;
 }
 
-const { text, items = [] }: Props = Astro.props; /* har brugt en "array" som er []*/
+const { text, items = [], bgColor = "#AC7470", shadowColor = "#69434F", headingColor = "#F3E2D6", textColor = "#F3E2D6" }: Props = Astro.props; /* har brugt en "array" som er []*/
 ---
 
-<div class="card">
+<div class="card" style={`--bg: ${bgColor}; --shadow: ${shadowColor}; --heading: ${headingColor}; --text: ${textColor};`}>
   <h2>{text}</h2>
   <ul>
     {items.map((item) => <li>{item}</li>)}
@@ -17,7 +21,8 @@ const { text, items = [] }: Props = Astro.props; /* har brugt en "array" som er 
 
 <style>
   .card {
-    border: 2px solid #ac7470;
+    background-color: var(--bg);
+    box-shadow: 10px 10px 0px var(--shadow);
     padding: 1.5rem;
     max-width: 500px;
     margin: 2rem auto; /* center */
@@ -27,7 +32,7 @@ const { text, items = [] }: Props = Astro.props; /* har brugt en "array" som er 
     text-align: center;
     font-size: 2rem;
     margin-bottom: 1.5rem;
-    color: #533725;
+    color: var(--heading);
   }
 
   ul {
@@ -41,7 +46,7 @@ const { text, items = [] }: Props = Astro.props; /* har brugt en "array" som er 
     margin-bottom: 2rem;
     position: relative;
     padding-left: 1.2rem;
-    color: #462811;
+    color: var(--text);
   }
 
   ul li::before {
@@ -49,6 +54,6 @@ const { text, items = [] }: Props = Astro.props; /* har brugt en "array" som er 
     position: absolute;
     left: 0;
     font-weight: bold;
-    color: #462811;
+    color: var(--text);
   }
 </style>
